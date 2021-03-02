@@ -1,0 +1,25 @@
+{
+  "name": "graphql-nodejs",
+  "version": "1.0.0",
+  "description": "Graphql with nodejs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minkj1992/graphql-nodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minkj1992/graphql-nodejs/issues"
+  },
+  "homepage": "https://github.com/minkj1992/graphql-nodejs#readme",
+  "dependencies": {
+    "apollo-server": "^2.21.0",
+    "graphql": "^15.5.0"
+  }
+}
