@@ -1,21 +1,36 @@
 const { ApolloServer, gql } = require("apollo-server");
+const fs = require("fs");
+const path = require("path");
+// const Query = require("./resolvers/Query");
 
-// 1
-const typeDefs = gql`
-  type Query {
-    info: String!
-  }
-`;
-
-// 2
-const resolvers = {
-  Query: {
-    info: () => `This is the API of a Hackernews Clone`,
+let links = [
+  {
+    id: "link-0",
+    url: "www.howtographql.com",
+    description: "Fullstack tutorial for GraphQL",
   },
+];
+
+const Query = {
+  info: () => `This is the API of a Hackernews Clone`,
+  feed: () => links,
+};
+
+const Link = {
+  id: (parent) => parent.id,
+  description: (parent) => parent.description,
+  url: (parent) => parent.url,
+};
+
+const resolvers = {
+  Query,
+  Link,
 };
 
 const server = new ApolloServer({
-  typeDefs,
+  typeDefs: gql`
+    ${fs.readFileSync(path.join(__dirname, "schema.graphql"), "utf8")}
+  `,
   resolvers,
 });
 
