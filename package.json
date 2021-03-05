@@ -19,7 +19,12 @@
   },
   "homepage": "https://github.com/minkj1992/graphql-nodejs#readme",
   "dependencies": {
+    "@prisma/client": "^2.18.0",
     "apollo-server": "^2.21.0",
     "graphql": "^15.5.0"
+  },
+  "devDependencies": {
+    "@prisma/cli": "^2.18.0",
+    "prisma": "^2.18.0"
   }
 }
