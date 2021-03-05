@@ -8,6 +8,7 @@ npm i @prisma/cli -D
 npx prisma init
 npx prisma migrate dev --preview-feature
 npx prisma generate
+npx prisma studio # check model with prisma studio web
 ```
 
 ## ref
