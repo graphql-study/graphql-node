@@ -16,6 +16,19 @@ const Query = {
   feed: () => links,
 };
 
+let idCount = links.length;
+const Mutation = {
+  post: (parent, args) => {
+    const link = {
+      id: `link-${idCount++}`,
+      description: args.description,
+      url: args.url,
+    };
+    links.push(link);
+    return link;
+  },
+};
+
 const Link = {
   id: (parent) => parent.id,
   description: (parent) => parent.description,
@@ -24,6 +37,7 @@ const Link = {
 
 const resolvers = {
   Query,
+  Mutation,
   Link,
 };
 
