@@ -16,9 +16,10 @@
   - update vote()
 - [x] filtering
 - [x] limit-offset pagination
-- [ ] sorting
+- [x] sorting
   - enum based sort
   - string sort
+- [x] count number of row
 
 ## v 2.0.0
 - [ ] middleware validation(pipelining)

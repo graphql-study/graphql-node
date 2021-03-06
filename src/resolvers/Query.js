@@ -6,10 +6,14 @@
  * 한국, 한국어 (o)
  
 {
-  feed(filter: "한국어", take: 3, skip: 1) {
-    id
-    url
-    description
+  feed(filter: "한국어", take: 5, skip: 1, orderBy: {createdAt: desc}) {
+    count
+    links {
+      id
+      url
+      description
+    }
+
   }
 }
 */
@@ -23,12 +27,19 @@ async function feed(parent, args, context, info) {
       }
     : {};
 
-  return await context.prisma.link.findMany({
+  const links = await context.prisma.link.findMany({
     where,
     skip: args.skip,
     take: args.take,
     orderBy: args.orderBy,
   });
+
+  const count = await context.prisma.link.count({ where });
+
+  return {
+    links,
+    count,
+  };
 }
 
 module.exports = {

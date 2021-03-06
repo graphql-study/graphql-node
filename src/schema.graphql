@@ -4,7 +4,12 @@ type Query {
     skip: Int # start
     take: Int # limit
     orderBy: LinkOrderByInput
-  ): [Link!]!
+  ): Feed
+}
+
+type Feed {
+  links: [Link!]!
+  count: Int!
 }
 
 type Mutation {
