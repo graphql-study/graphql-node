@@ -1,12 +1,15 @@
-const dotenv = require("dotenv");
 const jwt = require("jsonwebtoken");
-
-const { APP_SECRET, PUB_LINK_KEY } = dotenv.config().parsed;
+const { APP_SECRET } = require("./config");
 
 function getTokenPayload(token) {
   return jwt.verify(token, APP_SECRET);
 }
 
+/**
+ *
+ * @param {*} req : express.Request
+ * @param {*} authToken : Authorization": "Bearer-TOKEN"
+ */
 function getUserId(req, authToken) {
   if (req) {
     const authHeader = req.headers.authorization;
@@ -27,7 +30,5 @@ function getUserId(req, authToken) {
 }
 
 module.exports = {
-  APP_SECRET,
-  PUB_LINK_KEY,
   getUserId,
 };
