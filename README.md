@@ -14,8 +14,8 @@
 - [x] Realtime Graphql subscriptions
   - update new link()
   - update vote()
-- [ ] filtering
-- [ ] pagination
+- [x] filtering
+- [x] limit-offset pagination
 - [ ] sorting
 
 ## v 2.0.0

@@ -6,7 +6,7 @@
  * 한국, 한국어 (o)
  
 {
-  feed(filter: "한국어 테스트") {
+  feed(filter: "한국어", take: 3, skip: 1) {
     id
     url
     description
@@ -22,7 +22,12 @@ async function feed(parent, args, context, info) {
         ],
       }
     : {};
-  return await context.prisma.link.findMany({ where });
+
+  return await context.prisma.link.findMany({
+    where,
+    skip: args.skip,
+    take: args.take,
+  });
 }
 
 module.exports = {

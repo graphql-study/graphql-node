@@ -1,5 +1,9 @@
 type Query {
-  feed(filter: String): [Link!]!
+  feed(
+    filter: String
+    skip: Int # start
+    take: Int # limit
+  ): [Link!]!
 }
 
 type Mutation {
