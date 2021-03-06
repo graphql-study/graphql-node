@@ -1,7 +1,10 @@
 # graphql-nodejs
 > Graphql with nodejs
 
+![](./logo.png)
+
 ## v 1.0.0
+> [my study note](./graphql-nodejs.pdf)
 - [x] Node.js(express)
 - [x] apollo-server
 - [x] es6
