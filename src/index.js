@@ -1,4 +1,4 @@
-const { ApolloServer, gql } = require("apollo-server");
+const { ApolloServer, gql, PubSub } = require("apollo-server");
 const { PrismaClient } = require("@prisma/client");
 const fs = require("fs");
 const path = require("path");
@@ -8,6 +8,13 @@ const Mutation = require("./resolvers/Mutation.js");
 const User = require("./resolvers/User.js");
 const Link = require("./resolvers/Link.js");
 
+const prisma = new PrismaClient();
+const pubsub = new PubSub();
+const graphqlSchema = fs.readFileSync(
+  path.join(__dirname, "schema.graphql"),
+  "utf8"
+);
+
 const resolvers = {
   Query,
   Mutation,
@@ -15,16 +22,16 @@ const resolvers = {
   User,
 };
 
-const prisma = new PrismaClient();
 const server = new ApolloServer({
   typeDefs: gql`
-    ${fs.readFileSync(path.join(__dirname, "schema.graphql"), "utf8")}
+    ${graphqlSchema}
   `,
   resolvers,
   context: ({ req }) => {
     return {
       ...req,
       prisma,
+      pubsub,
       userId: req && req.headers.authorization ? getUserId(req) : null,
     };
   },
