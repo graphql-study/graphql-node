@@ -2,26 +2,25 @@
 > Graphql with nodejs
 
 ## v 1.0.0
-- [v] nodejs(express)
-- [v] apollo-server
-- [v] es6
-- [v] login and jwt session
-- [v] sign-up
-- [v] Graphql query, mutation
-- [v] prisma
-- [v] sqlite
+- [x] Node.js(express)
+- [x] apollo-server
+- [x] es6
+- [x] login and jwt session
+- [x] sign-up
+- [x] Graphql query, mutation
+- [x] prisma
+- [x] sqlite
 - [ ] [hacker news api](https://news.ycombinator.com/best)
-- [ ] Realtime Graphql subscriptions
+- [x] Realtime Graphql subscriptions
   - update new link()
   - update vote()
 - [ ] filtering, pagination, sorting
 
 ## v 2.0.0
-- [] typescript
-- [] 
-- [] google oauth2
-- [] realtime chatting
-- [] 3rd party api
+- [ ] typescript
+- [ ] google oauth2
+- [ ] realtime chatting
+- [ ] 3rd party api
 
 ## setup
 ```
