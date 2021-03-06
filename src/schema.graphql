@@ -3,6 +3,7 @@ type Query {
     filter: String
     skip: Int # start
     take: Int # limit
+    orderBy: LinkOrderByInput
   ): [Link!]!
 }
 
@@ -42,4 +43,15 @@ type Vote {
   id: ID!
   link: Link!
   user: User!
+}
+
+input LinkOrderByInput {
+  description: Sort
+  url: Sort
+  createdAt: Sort
+}
+
+enum Sort {
+  asc
+  desc
 }

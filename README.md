@@ -17,6 +17,8 @@
 - [x] filtering
 - [x] limit-offset pagination
 - [ ] sorting
+  - enum based sort
+  - string sort
 
 ## v 2.0.0
 - [ ] middleware validation(pipelining)
