@@ -3,10 +3,11 @@ const { PrismaClient } = require("@prisma/client");
 const fs = require("fs");
 const path = require("path");
 const { getUserId } = require("./utils");
-const Query = require("./resolvers/Query.js");
-const Mutation = require("./resolvers/Mutation.js");
-const User = require("./resolvers/User.js");
-const Link = require("./resolvers/Link.js");
+const Query = require("./resolvers/Query");
+const Mutation = require("./resolvers/Mutation");
+const User = require("./resolvers/User");
+const Link = require("./resolvers/Link");
+const Subscription = require("./resolvers/Subscription");
 
 const prisma = new PrismaClient();
 const pubsub = new PubSub();
@@ -20,6 +21,7 @@ const resolvers = {
   Mutation,
   Link,
   User,
+  Subscription,
 };
 
 const server = new ApolloServer({
