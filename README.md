@@ -14,9 +14,16 @@
 - [x] Realtime Graphql subscriptions
   - update new link()
   - update vote()
-- [ ] filtering, pagination, sorting
+- [ ] filtering
+- [ ] pagination
+- [ ] sorting
 
 ## v 2.0.0
+- [ ] middleware validation(pipelining)
+- [ ] websocket performance refactor
+  - [live 1M GraphQL Websocket](https://itnext.io/how-we-manage-live-1m-graphql-websocket-subscriptions-11e1880758b0)
+  - [apollo-subscriptions](https://www.apollographql.com/docs/react/data/subscriptions/)
+- [ ] prisma performance optimization
 - [ ] typescript
 - [ ] google oauth2
 - [ ] realtime chatting
