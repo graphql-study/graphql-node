@@ -4,7 +4,10 @@
 ## setup
 ```
 npm install apollo-server graphql
+npm install jsonwebtoken bcryptjs
 npm i @prisma/cli -D
+
+
 npx prisma init
 npx prisma migrate dev --preview-feature
 npx prisma generate
